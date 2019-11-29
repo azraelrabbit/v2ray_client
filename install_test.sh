@@ -52,7 +52,7 @@ if [ ${OS} == Ubuntu ] || [ ${OS} == Debian ] || [ ${OS} == LinuxMint ] || [ ${O
     pip3 install -r requirements.txt
     pip3 install gunicorn
     pip3 install setuptools
-    easy_install ez_setup
+    pip3 install ez_setup
     pip3 install supervisor
 fi
 #Manjaro&&Arch_Linux
@@ -70,7 +70,7 @@ if [ ${OS} == CentOS ];then
     pip3 install gunicorn
     pip3 install supervisor
      pip3 install setuptools
-    easy_install ez_setup
+    pip3 install ez_setup
 fi
 #openSUSE
 if [ ${OS} == openSUSE ];then
