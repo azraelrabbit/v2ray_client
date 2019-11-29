@@ -48,9 +48,12 @@ fi
 #Ubuntu
 if [ ${OS} == Ubuntu ] || [ ${OS} == Debian ] || [ ${OS} == LinuxMint ] || [ ${OS} == elementaryOS ] || [ ${OS} == Deepin ];then
     apt-get update -y
-    apt-get install git unzip net-tools supervisor curl python3 python3-pip -y
+    apt-get install git unzip net-tools  curl python3 python3-pip -y
     pip3 install -r requirements.txt
     pip3 install gunicorn
+    pip3 install setuptools
+    easy_install ez_setup
+    pip3 install supervisor
 fi
 #Manjaro&&Arch_Linux
 if [ ${OS} == ManjaroLinux ] || [ ${OS} == ArchLinux ];then
@@ -66,6 +69,8 @@ if [ ${OS} == CentOS ];then
     pip3 install -r requirements.txt
     pip3 install gunicorn
     pip3 install supervisor
+     pip3 install setuptools
+    easy_install ez_setup
 fi
 #openSUSE
 if [ ${OS} == openSUSE ];then
@@ -157,6 +162,8 @@ autostart=true
 autorestart=true
 stopasgroup=true
 killasgroup=true
+[supervisord]
+[supervisorctl]
 EOF
 
 # 关闭supervisor
